@@ -1,0 +1,78 @@
+Lentivault License
+
+Copyright (c) 2026 William Matthew Lindberg. All rights reserved.
+
+Lentivault (the website, the web app, the Android app, the browser extension,
+their code, texts, icons and other content, together "the Software") is free
+to use, but it is not open source. The Software is made only to be used: the
+website and web app to be visited and used, the Android app (APK) and the
+browser extension to be downloaded from the official Lentivault download page
+and installed.
+
+1. What you may do
+
+   Free of charge, you may:
+   a. use the website and the web app, and download the Android app and the
+      browser extension from the official Lentivault download page and
+      install them on your own devices and browsers, for your own personal,
+      non-commercial use;
+   b. use it within a non-commercial group, for example a family, a school
+      class, a club or a community, as long as nobody is charged for access
+      to Lentivault itself;
+   c. export, keep and share your own Lentivault data (for example the CSV or
+      JSON exports of your own usage history and settings).
+
+2. What you may not do
+
+   Without prior written permission from the copyright holder, you may not:
+   a. copy, reproduce, republish, re-upload or redistribute the Software or any
+      part of it, including the APK file, the extension package and the
+      website's files, except for the copies made automatically when you
+      install, run or visit it yourself;
+   b. modify, decompile, reverse engineer or take apart the Software, or make,
+      publish or distribute anything based on it (a "derivative work"),
+      including a renamed or rebranded version, except to the extent that the
+      law where you live allows this despite this restriction (for example for
+      security research or interoperability);
+   c. use the Software, or any part of it, for commercial purposes. This
+      includes selling it, charging for access to it, including it in a paid
+      product or service, showing ads in or around it, or using it to make
+      money in any other way;
+   d. remove or change this license or any copyright notice;
+   e. use the name "Lentivault" or the Lentivault logo for another product.
+
+3. Third-party libraries
+
+   Lentivault includes third-party open-source libraries (such as React and
+   Capacitor). Each of them is covered by its own license. Those licenses
+   apply only to those libraries. They give no rights to Lentivault itself or
+   to any other part of the Software.
+
+4. GitHub
+
+   If the website's files, the APK or the extension package are hosted in a
+   public GitHub repository, GitHub's Terms of Service let GitHub users view
+   and fork that repository on GitHub. That gives no rights beyond this
+   license: you may not use, change or distribute a fork or any of its files
+   in any way section 2 does not allow.
+
+5. Ending
+
+   If you break this license, your permission to use the Software ends
+   automatically.
+
+6. No warranty
+
+   The Software is provided "as is", without warranty of any kind, express or
+   implied, including the warranties of merchantability, fitness for a
+   particular purpose and non-infringement. Lentivault is a screen-time tool:
+   it cannot guarantee that a restriction is enforced, because the operating
+   system or browser lets the device's owner disable or remove it at any time
+   (see the capability matrix and recovery guide). It is not a medical or
+   therapeutic product. Always keep emergency services reachable by your own
+   means. In no event shall the copyright holder be liable for any claim,
+   damages or other liability, whether in contract, tort or otherwise, arising
+   from, out of or in connection with the Software or its use.
+
+For permission to do anything not allowed above, including commercial use,
+contact the copyright holder through https://github.com/William-Lindberg.

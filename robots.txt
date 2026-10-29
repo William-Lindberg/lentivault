@@ -1,0 +1,4 @@
+# Lentivault website. No tracking here, and nothing to hide from search engines except the app shell.
+User-agent: *
+Allow: /
+Disallow: /app/

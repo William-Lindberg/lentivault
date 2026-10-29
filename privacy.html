@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy · Lentivault</title>
+    <meta name="description" content="Lentivault keeps all data on your device. No accounts, no analytics, no ads, and no internet permission on Android. Exactly what is stored, where, and how to delete it." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F6F7F9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F141C" media="(prefers-color-scheme: dark)" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" href="/lentivault/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/lentivault/favicon.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/lentivault/icons/apple-touch-icon.png" />
+    <script type="module" crossorigin src="/lentivault/assets/modulepreload-polyfill-P2Xu9kJm.js"></script>
+    <script type="module" crossorigin src="/lentivault/assets/site-CbyHMNeq.js"></script>
+    <link rel="stylesheet" crossorigin href="/lentivault/assets/site-CpM9wEXj.css">
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/lentivault/"><img src="/lentivault/icons/mark.svg" alt="" width="32" height="32" />Lentivault</a>
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">Menu</button>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+          <li><a href="/lentivault/">Home</a></li>
+          <li><a href="/lentivault/features.html">Features</a></li>
+          <li><a href="/lentivault/modes.html">Modes</a></li>
+          <li><a href="/lentivault/how-it-works.html">How it works</a></li>
+          <li><a href="/lentivault/capabilities.html">Capabilities</a></li>
+          <li><a href="/lentivault/privacy.html" aria-current="page">Privacy</a></li>
+          <li><a href="/lentivault/download.html">Download</a></li>
+          <li><a href="/lentivault/faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <div class="wrap">
+        <div class="page-intro">
+          <h1>Privacy</h1>
+          <p class="lead">Short version: everything stays on your device. There is no Lentivault server, account, analytics or advertising, and the Android app has no permission to use the internet.</p>
+        </div>
+
+        <div class="prose">
+          <h2>What is stored, and where</h2>
+          <ul>
+            <li><strong>On Android:</strong> your settings, rules, timers, commitments, daily usage summaries and the audit trail are kept in the app’s private storage (the app’s WebView storage and Android’s SharedPreferences for the enforcement plan and event log). Other apps cannot read them.</li>
+            <li><strong>In the web app:</strong> the same data in your browser’s local storage for this site, on this device only.</li>
+            <li><strong>In the browser extension:</strong> your site lists, schedules, time spent per site per day and settings, in the extension’s own storage. It does not record which pages you visit, only time per configured site.</li>
+          </ul>
+
+          <h2>What is never collected</h2>
+          <ul>
+            <li>No account, name, e-mail address or phone number.</li>
+            <li>No analytics, crash reporting, advertising identifiers or third-party SDKs.</li>
+            <li>No message contents, screen contents or keystrokes. The accessibility service only reads which app is in front and, in supported browsers, the address bar, to apply your rules. It does not store or send that information.</li>
+            <li>No browsing history: the extension checks addresses against your own block list inside the browser.</li>
+          </ul>
+
+          <h2>Network</h2>
+          <ul>
+            <li><strong>Android:</strong> the app does not request the <code>INTERNET</code> permission, so Android does not let it open network connections at all. You can verify this in Settings → Apps → Lentivault → Permissions, or in the APK manifest.</li>
+            <li><strong>Web app:</strong> its security policy only allows loading files from its own address, and it makes no requests to anyone else. This website uses no cookies, no fonts or scripts from other servers, and no tracking.</li>
+            <li><strong>Extension:</strong> makes no network requests of its own; it uses the browser’s blocking rules locally.</li>
+          </ul>
+
+          <h2>Permissions and why</h2>
+          <ul>
+            <li><strong>Usage access</strong>: to show your screen time and apply daily allowances and launch limits.</li>
+            <li><strong>Accessibility</strong>: to see which app is in front, open the block or pause screen, and read browser address bars for website rules. It is used for nothing else.</li>
+            <li><strong>Notifications</strong> (optional): reminders, timer ends, renewal deadlines.</li>
+            <li><strong>Exact alarms</strong> (optional): reminders exactly on time.</li>
+            <li><strong>Device Admin</strong> (optional): only for uninstall friction; it uses no other admin powers.</li>
+            <li><strong>App list</strong>: Lentivault asks Android only for apps that have a launcher icon, not for every package on the device.</li>
+          </ul>
+
+          <h2>Accountability without sharing data</h2>
+          <p>The optional trusted-person code is generated on your device. Lentivault stores only its SHA-256 hash and never sends it anywhere. You decide whether and how to give it to someone.</p>
+
+          <h2>Your control</h2>
+          <ul>
+            <li><strong>Export</strong> everything as JSON, or your history as CSV, from Settings → Data.</li>
+            <li><strong>Delete</strong> all data from Settings → Data. This is always allowed, even during a commitment. The enforcement already handed to Android keeps the current commitment cycle running until it ends, and the app tells you this before you confirm.</li>
+            <li><strong>Uninstalling</strong> Lentivault removes all its data from the phone. Android backups of app data are turned off.</li>
+          </ul>
+
+          <h2>Changes</h2>
+          <p>If this policy ever changes, the change will be described here and in the release notes before it applies. Lentivault will not add accounts, ads or analytics.</p>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <ul>
+          <li><a href="/lentivault/recovery.html">Recovery guide</a></li>
+          <li><a href="/lentivault/privacy.html">Privacy</a></li>
+          <li><a href="/lentivault/capabilities.html">Capability matrix</a></li>
+          <li><a href="/lentivault/faq.html">FAQ</a></li>
+          <li><a href="/lentivault/app/">Open the web app</a></li>
+        </ul>
+        <p>Lentivault is free, with no ads, no accounts and no analytics. Your data stays on your device.</p>
+        <p>© 2026 William Matthew Lindberg. Free for personal use under the <a href="/lentivault/LICENSE.txt">Lentivault licence</a>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

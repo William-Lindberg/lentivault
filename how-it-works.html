@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How it works · Lentivault</title>
+    <meta name="description" content="How Lentivault turns your rules into a plan that Android or the browser enforces on its own, even when the app is closed, and why it never claims more than the device confirms." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F6F7F9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F141C" media="(prefers-color-scheme: dark)" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" href="/lentivault/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/lentivault/favicon.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/lentivault/icons/apple-touch-icon.png" />
+    <script type="module" crossorigin src="/lentivault/assets/modulepreload-polyfill-P2Xu9kJm.js"></script>
+    <script type="module" crossorigin src="/lentivault/assets/site-CbyHMNeq.js"></script>
+    <link rel="stylesheet" crossorigin href="/lentivault/assets/site-CpM9wEXj.css">
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/lentivault/"><img src="/lentivault/icons/mark.svg" alt="" width="32" height="32" />Lentivault</a>
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">Menu</button>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+          <li><a href="/lentivault/">Home</a></li>
+          <li><a href="/lentivault/features.html">Features</a></li>
+          <li><a href="/lentivault/modes.html">Modes</a></li>
+          <li><a href="/lentivault/how-it-works.html" aria-current="page">How it works</a></li>
+          <li><a href="/lentivault/capabilities.html">Capabilities</a></li>
+          <li><a href="/lentivault/privacy.html">Privacy</a></li>
+          <li><a href="/lentivault/download.html">Download</a></li>
+          <li><a href="/lentivault/faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <div class="wrap">
+        <div class="page-intro">
+          <h1>How it works</h1>
+          <p class="lead">Your rules become a plan. The device enforces the plan on its own, so restrictions keep working when Lentivault is closed.</p>
+        </div>
+
+        <div class="prose">
+          <h2>1. You choose, the app compiles a plan</h2>
+          <p>Modes, rules, timers, schedules and commitments are combined into one <em>enforcement plan</em>: which apps or sites, when, with which limit and which action. Commitment cycles are written out in advance (60 days ahead), so a renewal never depends on the app being opened.</p>
+
+          <h2>2. The device enforces the plan</h2>
+          <p><strong>On Android</strong>, the plan is handed to Lentivault's native part and saved on the phone. An accessibility service sees which app comes to the front. If the plan says that app is restricted right now, a native Lentivault screen opens over it with the reason, the end time, Go home, and Emergency call. Daily allowances and launch counts come from Android's own usage statistics.</p>
+          <p><strong>In Chrome, Edge, Brave, Opera and Firefox</strong>, the extension turns the plan into the browser's built-in blocking rules (declarativeNetRequest), sets alarms for schedule boundaries, and hides feeds with small content scripts.</p>
+          <p><strong>In the web app</strong>, nothing is enforced: a web page cannot see or block other apps. The web app is for planning, focus timers and trying Lentivault with clearly labelled demo data.</p>
+
+          <h2>3. The app only says "active" when the device confirms it</h2>
+          <p>Every restriction shows its real state: <em>Active</em> only when the native layer has accepted the current plan and the service is running. Otherwise you see <em>Permission missing</em>, <em>Enforcement interrupted</em>, <em>Not synced yet</em> or <em>Not supported here</em>, with a button to fix it where possible.</p>
+
+          <h2>4. Time you can trust</h2>
+          <ul>
+            <li>All times are stored as exact instants and shown in your time zone. Commitments keep the time zone they started in, so travelling does not move their end.</li>
+            <li>Day and week lengths follow the calendar: "7 days from Sunday 18:00" ends on Sunday 18:00 even across a daylight-saving change.</li>
+            <li>On Android, Lentivault keeps its own monotonic clock reference. If the device clock is changed by hand, it notices the jump and keeps counting real elapsed time instead of ending a block early.</li>
+            <li>After a restart, Android starts the accessibility service again once you unlock the phone, and the saved plan is used straight away.</li>
+          </ul>
+
+          <h2>5. Emergencies always come first</h2>
+          <p>The phone dialer, emergency information, the system interface, your launcher and Lentivault itself are never blocked, whatever the plan says. The block screen always has an Emergency call button.</p>
+
+          <h2>6. Nothing leaves your device</h2>
+          <p>There is no server. The Android app has no internet permission. Read the <a href="/lentivault/privacy.html">privacy details</a>.</p>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <ul>
+          <li><a href="/lentivault/recovery.html">Recovery guide</a></li>
+          <li><a href="/lentivault/privacy.html">Privacy</a></li>
+          <li><a href="/lentivault/capabilities.html">Capability matrix</a></li>
+          <li><a href="/lentivault/faq.html">FAQ</a></li>
+          <li><a href="/lentivault/app/">Open the web app</a></li>
+        </ul>
+        <p>Lentivault is free, with no ads, no accounts and no analytics. Your data stays on your device.</p>
+        <p>© 2026 William Matthew Lindberg. Free for personal use under the <a href="/lentivault/LICENSE.txt">Lentivault licence</a>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

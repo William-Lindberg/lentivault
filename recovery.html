@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recovery · Lentivault</title>
+    <meta name="description" content="What to do if something goes wrong with Lentivault: emergency calls, missing permissions, a restriction that seems stuck, and how a commitment ends through Android itself." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F6F7F9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F141C" media="(prefers-color-scheme: dark)" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" href="/lentivault/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/lentivault/favicon.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/lentivault/icons/apple-touch-icon.png" />
+    <script type="module" crossorigin src="/lentivault/assets/modulepreload-polyfill-P2Xu9kJm.js"></script>
+    <script type="module" crossorigin src="/lentivault/assets/site-CbyHMNeq.js"></script>
+    <link rel="stylesheet" crossorigin href="/lentivault/assets/site-CpM9wEXj.css">
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/lentivault/"><img src="/lentivault/icons/mark.svg" alt="" width="32" height="32" />Lentivault</a>
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">Menu</button>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+          <li><a href="/lentivault/">Home</a></li>
+          <li><a href="/lentivault/features.html">Features</a></li>
+          <li><a href="/lentivault/modes.html">Modes</a></li>
+          <li><a href="/lentivault/how-it-works.html">How it works</a></li>
+          <li><a href="/lentivault/capabilities.html">Capabilities</a></li>
+          <li><a href="/lentivault/privacy.html">Privacy</a></li>
+          <li><a href="/lentivault/download.html">Download</a></li>
+          <li><a href="/lentivault/faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <div class="wrap">
+        <div class="page-intro">
+          <h1>Recovery guide</h1>
+          <p class="lead">Calm, practical steps for when something does not work as expected.</p>
+        </div>
+
+        <div class="note">
+          <p><strong>Emergency calls always work.</strong> The phone dialer and emergency information are never blocked, and every block screen has an <strong>Emergency call</strong> button. You can also call from the lock screen as usual.</p>
+        </div>
+
+        <div class="prose">
+          <h2>A restriction shows "Permission missing" or "Enforcement interrupted"</h2>
+          <ol class="steps">
+            <li>Open Lentivault → Settings → Permissions. Every missing item has a button that opens the right system screen.</li>
+            <li>Check <strong>Accessibility</strong> is on for Lentivault, and <strong>Usage access</strong> is allowed.</li>
+            <li>On Android 13+, if the accessibility switch is greyed out, follow the <a href="/lentivault/download.html#android">Allow restricted settings</a> steps.</li>
+            <li>Set battery use to <strong>Unrestricted</strong> if your phone stops background services.</li>
+          </ol>
+
+          <h2>An app is blocked and you did not expect it</h2>
+          <ul>
+            <li>The block screen shows which rule is responsible and when it ends.</li>
+            <li>Open Lentivault → Schedules to see all rules on a timeline; overlapping rules are explained there.</li>
+            <li>Rules from Gentle, Mindful and Firm modes can be paused or edited in the app. Strict and Maximum commitments can be ended early through their delayed request. Ultra Extreme cannot be ended from inside the app.</li>
+          </ul>
+
+          <h2>The time looks wrong</h2>
+          <ul>
+            <li>Turn on <strong>automatic date and time</strong> and <strong>automatic time zone</strong> in Android Settings.</li>
+            <li>Commitments keep the time zone they started in, and their end times are shown in that zone.</li>
+            <li>If you changed the clock by hand, Lentivault notices and keeps counting real time, so the block does not end early. It returns to normal once the clock is correct.</li>
+          </ul>
+
+          <h2>How a commitment ends through Android itself</h2>
+          <p>Lentivault is designed so that you cannot weaken a commitment from inside the app. Android, however, always leaves the phone’s owner in control. These system actions end Lentivault’s enforcement on that device. They are listed here so you know your options in an emergency or if something goes wrong, not as a recommendation:</p>
+          <ul>
+            <li><strong>Turn off the accessibility service:</strong> Settings → Accessibility → Lentivault → off. Blocking stops immediately; tracking continues.</li>
+            <li><strong>Safe mode:</strong> restarting in safe mode (the method differs per phone) starts Android without third-party apps, so no blocking applies until a normal restart.</li>
+            <li><strong>Uninstall:</strong> Settings → Apps → Lentivault → Uninstall. If you turned on uninstall friction, first turn off Lentivault under Settings → Security → Device admin apps. Uninstalling deletes all Lentivault data.</li>
+          </ul>
+          <p>Lentivault records an interruption in the commitment’s audit trail when it notices one. The commitment’s timer keeps running; turning the service back on does not extend it.</p>
+
+          <h2>In the browser extension</h2>
+          <ul>
+            <li>Removing or disabling the extension on the browser’s extensions page ends its enforcement in that browser.</li>
+            <li>If a site looks broken, feed hiding may not match a recent site change: turn off feed hiding for that site in the extension’s options.</li>
+          </ul>
+
+          <h2>Moving to a new phone</h2>
+          <ol class="steps">
+            <li>On the old phone: Settings → Data → Export (JSON).</li>
+            <li>Install Lentivault on the new phone and choose Import during setup or in Settings → Data.</li>
+            <li>Grant the permissions again. Commitments that are still running continue with the same end times.</li>
+          </ol>
+
+          <h2>Reset everything</h2>
+          <p>Settings → Data → Delete all data. This is always allowed. If a commitment is running, the enforcement already handed to Android keeps the current cycle in place until it ends; the app explains this before you confirm.</p>
+
+          <h2>If you are struggling</h2>
+          <p>Lentivault is a tool for managing screen time; it is not a medical or therapeutic service. If your phone use is causing you real distress, talking to someone you trust or a healthcare professional can help.</p>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <ul>
+          <li><a href="/lentivault/recovery.html">Recovery guide</a></li>
+          <li><a href="/lentivault/privacy.html">Privacy</a></li>
+          <li><a href="/lentivault/capabilities.html">Capability matrix</a></li>
+          <li><a href="/lentivault/faq.html">FAQ</a></li>
+          <li><a href="/lentivault/app/">Open the web app</a></li>
+        </ul>
+        <p>Lentivault is free, with no ads, no accounts and no analytics. Your data stays on your device.</p>
+        <p>© 2026 William Matthew Lindberg. Free for personal use under the <a href="/lentivault/LICENSE.txt">Lentivault licence</a>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

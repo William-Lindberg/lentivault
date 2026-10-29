@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Capabilities · Lentivault</title>
+    <meta name="description" content="Exactly what Lentivault can and cannot enforce on Android, iOS, the web app, Chrome, Edge, Brave, Opera, Firefox, Safari and desktop, with the permissions and limits for each." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F6F7F9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F141C" media="(prefers-color-scheme: dark)" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" href="/lentivault/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/lentivault/favicon.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/lentivault/icons/apple-touch-icon.png" />
+    <script type="module" crossorigin src="/lentivault/assets/modulepreload-polyfill-P2Xu9kJm.js"></script>
+    <script type="module" crossorigin src="/lentivault/assets/site-CbyHMNeq.js"></script>
+    <link rel="stylesheet" crossorigin href="/lentivault/assets/site-CpM9wEXj.css">
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/lentivault/"><img src="/lentivault/icons/mark.svg" alt="" width="32" height="32" />Lentivault</a>
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">Menu</button>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+          <li><a href="/lentivault/">Home</a></li>
+          <li><a href="/lentivault/features.html">Features</a></li>
+          <li><a href="/lentivault/modes.html">Modes</a></li>
+          <li><a href="/lentivault/how-it-works.html">How it works</a></li>
+          <li><a href="/lentivault/capabilities.html" aria-current="page">Capabilities</a></li>
+          <li><a href="/lentivault/privacy.html">Privacy</a></li>
+          <li><a href="/lentivault/download.html">Download</a></li>
+          <li><a href="/lentivault/faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <div class="wrap">
+        <div class="page-intro">
+          <h1>What works where</h1>
+          <p class="lead">An honest list for each platform: what is supported, how it works, and how it can be bypassed. The same information is in the app under Settings → Capabilities, so you can check it on your own device.</p>
+        </div>
+
+        <div class="filter" data-filter hidden>
+          <span>Show:</span>
+          <button type="button" data-platform="all" aria-pressed="true">All</button>
+          <button type="button" data-platform="android" aria-pressed="false">Android</button>
+          <button type="button" data-platform="chromium" aria-pressed="false">Chrome / Edge / Brave / Opera</button>
+          <button type="button" data-platform="firefox" aria-pressed="false">Firefox</button>
+          <button type="button" data-platform="web" aria-pressed="false">Web app</button>
+          <button type="button" data-platform="ios" aria-pressed="false">iOS</button>
+          <button type="button" data-platform="safari" aria-pressed="false">Safari</button>
+          <button type="button" data-platform="desktop" aria-pressed="false">Desktop</button>
+          <span class="fine" role="status"></span>
+        </div>
+
+        <p class="fine">Legend: <span class="chip yes">Yes</span> supported · <span class="chip part">Partly</span> supported with a stated limit · <span class="chip no">No</span> not supported or not built.</p>
+
+        <section id="android" data-platform="android" aria-labelledby="p-android">
+          <h2 id="p-android">Android (8.0 and newer)</h2>
+          <p>Real enforcement, no root and no device owner. Needs two permissions you grant in system Settings: <strong>Usage access</strong> (statistics) and <strong>Accessibility</strong> (seeing which app is in front and opening the block screen). Notifications are optional.</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">Feature</th><th scope="col">Supported</th><th scope="col">How</th><th scope="col">Limits and bypasses</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Screen-time tracking</th><td><span class="chip yes">Yes</span></td><td>UsageStatsManager (Usage access). Works with all restrictions off.</td><td>Android keeps detailed events only for a limited time, so Lentivault saves daily summaries itself. Foreground time is not the same as screen-on time.</td></tr>
+                <tr><th scope="row">Per-app daily limits</th><td><span class="chip yes">Yes</span></td><td>Accessibility service compares usage with the plan.</td><td>Turning off the accessibility service or uninstalling ends enforcement.</td></tr>
+                <tr><th scope="row">Launch limits</th><td><span class="chip yes">Yes</span></td><td>App openings counted from usage events and the service.</td><td>Same as above.</td></tr>
+                <tr><th scope="row">Continuous-use limits</th><td><span class="chip yes">Yes</span></td><td>Session length measured while the app stays in front.</td><td>Briefly switching apps may count as a break.</td></tr>
+                <tr><th scope="row">Block screen</th><td><span class="chip yes">Yes</span></td><td>Native screen opened over the app; Go home, Emergency call.</td><td>There can be a short moment before the block screen appears.</td></tr>
+                <tr><th scope="row">Friction / pause screen</th><td><span class="chip yes">Yes</span></td><td>Native countdown, breathing, reason prompt.</td><td>Same as block screen.</td></tr>
+                <tr><th scope="row">Schedules and timers</th><td><span class="chip yes">Yes</span></td><td>Evaluated on the phone from the saved plan.</td><td>Works with Lentivault closed.</td></tr>
+                <tr><th scope="row">Ultra Extreme lock</th><td><span class="chip part">Within Android’s limits</span></td><td>No in-app way out; locked entries in the plan.</td><td>You can still disable the accessibility service in Settings, start in safe mode, or uninstall. Lentivault records the interruption.</td></tr>
+                <tr><th scope="row">Auto-renewal</th><td><span class="chip yes">Yes</span></td><td>Cycles written into the plan up to 60 days ahead, with a fallback rule beyond.</td><td>Renews the restriction only; there is nothing to pay.</td></tr>
+                <tr><th scope="row">Website blocking</th><td><span class="chip part">Partly</span></td><td>Reads the address bar of Chrome, Firefox, Samsung Internet, Edge, Brave, Opera and DuckDuckGo.</td><td>Other browsers and in-app browsers are not covered. Block the browser app itself if you need certainty.</td></tr>
+                <tr><th scope="row">Feed hiding inside apps</th><td><span class="chip no">No</span></td><td>Android does not let apps hide one part of another app.</td><td>Block the whole app, or use the browser version of the site with the extension.</td></tr>
+                <tr><th scope="row">Notifications</th><td><span class="chip yes">Yes</span></td><td>Local notifications (Android 13+ asks for permission).</td><td>Some manufacturers delay notifications in battery saving.</td></tr>
+                <tr><th scope="row">Home-screen widget</th><td><span class="chip yes">Yes</span></td><td>Today’s time, active restriction, next deadline.</td><td>Android refreshes widgets at most every 30 minutes by itself; the app updates it when opened.</td></tr>
+                <tr><th scope="row">Quick Settings tile</th><td><span class="chip yes">Yes</span></td><td>One tap starts a Quick Block.</td><td>Android 8+.</td></tr>
+                <tr><th scope="row">Uninstall friction</th><td><span class="chip part">One extra step</span></td><td>Optional Device Admin.</td><td>Android always lets you turn Device Admin off in Settings, then uninstall. It is a pause, not a lock.</td></tr>
+                <tr><th scope="row">After restart</th><td><span class="chip yes">Yes</span></td><td>Plan saved on the phone; service restarts after you unlock.</td><td>Nothing is enforced before the first unlock after a restart.</td></tr>
+                <tr><th scope="row">Clock or time-zone change</th><td><span class="chip yes">Yes</span></td><td>Monotonic clock reference detects manual jumps; commitments keep their time zone.</td><td>After a restart with automatic time off, the device clock has to be trusted again; Lentivault flags this.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="chromium" data-platform="chromium" aria-labelledby="p-chromium">
+          <h2 id="p-chromium">Chrome, Edge, Brave and Opera extension</h2>
+          <p>A Manifest V3 extension installed from a file (developer mode). Enforces inside that browser profile only.</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">Feature</th><th scope="col">Supported</th><th scope="col">How</th><th scope="col">Limits and bypasses</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Website blocking</th><td><span class="chip yes">Yes</span></td><td>declarativeNetRequest dynamic rules redirect to a block page.</td><td>Removing or disabling the extension ends it. Private windows only if you allow the extension there. Other browsers and profiles are not covered.</td></tr>
+                <tr><th scope="row">Per-site time limits</th><td><span class="chip yes">Yes</span></td><td>Active tab in the focused window, with the idle API.</td><td>Approximate: background tabs and other browsers are not counted.</td></tr>
+                <tr><th scope="row">Schedules and timers</th><td><span class="chip yes">Yes</span></td><td>Alarms at schedule boundaries.</td><td>Only while the browser is running (rules persist across restarts).</td></tr>
+                <tr><th scope="row">Feed hiding</th><td><span class="chip yes">Yes</span></td><td>Content scripts for YouTube, Instagram, Reddit, X, Facebook and LinkedIn.</td><td>Can stop working when a site changes its layout until the extension is updated.</td></tr>
+                <tr><th scope="row">Infinite-scroll brake</th><td><span class="chip yes">Yes</span></td><td>Overlay after a set number of screen heights.</td><td>Site-specific scrolling may differ.</td></tr>
+                <tr><th scope="row">Locked commitments</th><td><span class="chip part">Within the browser’s limits</span></td><td>Options page refuses to weaken them.</td><td>The browser always lets you remove the extension. Preventing that requires a managed (enterprise) browser.</td></tr>
+                <tr><th scope="row">After restart</th><td><span class="chip yes">Yes</span></td><td>Dynamic rules and storage persist.</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="firefox" data-platform="firefox" aria-labelledby="p-firefox">
+          <h2 id="p-firefox">Firefox extension (128 and newer)</h2>
+          <p>Same features as the Chromium extension. Firefox requires add-ons to be signed by Mozilla for permanent installation in its release version.</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">Feature</th><th scope="col">Supported</th><th scope="col">How</th><th scope="col">Limits and bypasses</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Website blocking</th><td><span class="chip yes">Yes</span></td><td>declarativeNetRequest.</td><td>Removing or disabling the add-on ends it. Firefox may ask you to allow access to all websites; without it, blocking and feed hiding cannot run.</td></tr>
+                <tr><th scope="row">Time limits, schedules, feed hiding</th><td><span class="chip yes">Yes</span></td><td>Same as Chromium.</td><td>Same as Chromium.</td></tr>
+                <tr><th scope="row">Installation</th><td><span class="chip part">Partly</span></td><td>Temporary add-on, or a signed file.</td><td>A temporary add-on is removed when Firefox closes. Firefox for Android is not supported in 0.1.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="web" data-platform="web" aria-labelledby="p-web">
+          <h2 id="p-web">Web app (any modern browser)</h2>
+          <p>For planning, focus timers and trying Lentivault. A web page cannot see or block other apps or sites, and we label this clearly in the app.</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">Feature</th><th scope="col">Supported</th><th scope="col">How</th><th scope="col">Limits and bypasses</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Screen-time tracking</th><td><span class="chip no">No</span></td><td>Browsers do not expose other apps’ usage.</td><td>Demo data is available and always labelled "Demo data".</td></tr>
+                <tr><th scope="row">Limits, blocking, friction</th><td><span class="chip no">No</span></td><td>—</td><td>Use Android or the extension.</td></tr>
+                <tr><th scope="row">Timers and Pomodoro</th><td><span class="chip part">While open</span></td><td>Runs in the tab.</td><td>Stops counting reminders if the tab is closed; nothing is blocked.</td></tr>
+                <tr><th scope="row">Schedules, modes, commitments</th><td><span class="chip part">Planning only</span></td><td>Create and review them.</td><td>Shown as "Not supported here", never as active.</td></tr>
+                <tr><th scope="row">Reports and export</th><td><span class="chip yes">Yes</span></td><td>CSV / JSON export of what is stored.</td><td>—</td></tr>
+                <tr><th scope="row">Notifications</th><td><span class="chip part">While open</span></td><td>Browser notifications if allowed.</td><td>No push: there is no server.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="ios" data-platform="ios" aria-labelledby="p-ios">
+          <h2 id="p-ios">iPhone and iPad (iOS)</h2>
+          <p><strong>Not available in version 0.1.</strong> Blocking apps on iOS requires Apple’s Screen Time API (Family Controls), which needs a special distribution entitlement from Apple, a paid developer account and a native app built with Xcode. iOS gives apps no equivalent of Android’s accessibility approach.</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">Feature</th><th scope="col">Supported</th><th scope="col">How</th><th scope="col">Limits and bypasses</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Everything</th><td><span class="chip no">Not built</span></td><td>Would use FamilyControls, DeviceActivity and ManagedSettings.</td><td>You can use the web app in Safari for planning and focus timers, and Apple’s built-in Screen Time.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="safari" data-platform="safari" aria-labelledby="p-safari">
+          <h2 id="p-safari">Safari (macOS, iOS)</h2>
+          <p><strong>Not available in version 0.1.</strong> Safari extensions have to be wrapped in a native app with Xcode and signed with an Apple developer account.</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">Feature</th><th scope="col">Supported</th><th scope="col">How</th><th scope="col">Limits and bypasses</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Everything</th><td><span class="chip no">Not built</span></td><td>Would be a Safari Web Extension from the same code.</td><td>Use Chrome, Edge, Brave, Opera or Firefox on desktop.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="desktop" data-platform="desktop" aria-labelledby="p-desktop">
+          <h2 id="p-desktop">Desktop apps (Windows, macOS, Linux)</h2>
+          <p><strong>Not available in version 0.1.</strong> The browser extension covers websites only; native desktop apps are not tracked or blocked.</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">Feature</th><th scope="col">Supported</th><th scope="col">How</th><th scope="col">Limits and bypasses</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Everything outside the browser</th><td><span class="chip no">Not built</span></td><td>—</td><td>Your operating system’s own screen-time tools can help in the meantime.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <h2>What happens when enforcement fails</h2>
+        <ul class="prose">
+          <li>If Android stops the accessibility service, or a permission is withdrawn, the affected restrictions change to <em>Enforcement interrupted</em> or <em>Permission missing</em>. Lentivault shows a notification when it can, and records the time in the commitment’s audit trail.</li>
+          <li>A commitment’s timer keeps running while enforcement is interrupted. Restoring the permission does not extend or restart it.</li>
+          <li>If a timer cannot be enforced at all, it is marked <em>Enforcement failed</em> instead of pretending to have worked.</li>
+        </ul>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <ul>
+          <li><a href="/lentivault/recovery.html">Recovery guide</a></li>
+          <li><a href="/lentivault/privacy.html">Privacy</a></li>
+          <li><a href="/lentivault/capabilities.html">Capability matrix</a></li>
+          <li><a href="/lentivault/faq.html">FAQ</a></li>
+          <li><a href="/lentivault/app/">Open the web app</a></li>
+        </ul>
+        <p>Lentivault is free, with no ads, no accounts and no analytics. Your data stays on your device.</p>
+        <p>© 2026 William Matthew Lindberg. Free for personal use under the <a href="/lentivault/LICENSE.txt">Lentivault licence</a>.</p>
+      </div>
+    </footer>
+  </body>
+</html>
